@@ -23,12 +23,3 @@ jobs:
           go-version: '1.20' # Adjust to your required Go version
 
       - name: Run Tests
-        run: |
-          if [[ -z "${{ github.event.client_payload.branch }}" ]]; then
-            echo "Manual trigger detected"
-            echo "Running tests for the default branch"
-          else
-            echo "Branch: ${{ github.event.client_payload.branch }}"
-            echo "Message: ${{ github.event.client_payload.message }}"
-          fi
-          go test ./... -v
