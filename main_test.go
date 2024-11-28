@@ -27,3 +27,10 @@ func TestMain(m *testing.M) {
 	slog.Info("testing done", "status", status)
 	os.Exit(val)
 }
+
+func TestExample(t *testing.T) {
+	t.Log("Running a test case")
+	if 1+1 != 2 {
+		t.Errorf("Math is broken: expected 2, got %d", 1+1)
+	}
+}
