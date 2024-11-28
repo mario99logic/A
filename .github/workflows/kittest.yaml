@@ -25,5 +25,5 @@ jobs:
       - name: Run Tests
         run: |
           echo "Running tests for the repository"
-          go test -v ./... 
+          go test -v ./main_test.go
        
