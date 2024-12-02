@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: run-tests-${{ github.event.client_payload.branch || 'manual-run' }}
-  cancel-in-progress: true # Cancel previous runs for the same branch or manual runs
+ 
 
 jobs:
   run-tests:
