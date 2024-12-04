@@ -1,21 +1,25 @@
-name: Run Tests on Dispatch
+name: Run Tests for Autokitteh PRs
 
 on:
   repository_dispatch:
     types:
       - run-tests
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch: 
 
 concurrency:
-  group: run-tests-${{ github.event.client_payload.branch || 'manual-run' }}
-  cancel-in-progress: false
+  group: run-tests-${{ github.event.client_payload.branch || 'manual-trigger'}}
+  cancel-in-progress: false 
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Out Repository
+      - name: Check Out Autokitteh Repository
         uses: actions/checkout@v3
+        with:
+          repository: autokitteh/autokitteh
+          ref: ${{ github.event.client_payload.branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set Up Go
         uses: actions/setup-go@v4
@@ -24,6 +28,5 @@ jobs:
 
       - name: Run Tests
         run: |
-          echo "Running tests for the repository"
+          echo "Running tests for Autokitteh repository"
           go test -v ./...
-       
