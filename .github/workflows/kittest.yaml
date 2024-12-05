@@ -35,3 +35,5 @@ jobs:
         run: |
           echo "Running tests for Autokitteh repository"
           go test -v ./...
+          echo "Checked-out branch:"
+          git branch --show-current
