@@ -31,11 +31,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Check for Stray Processes
-        run: |
-          echo "Checking for stray processes..."
-          ps aux | grep ak || echo "No stray processes found"
-
       - name: Run Tests
         run: |
           echo "Running tests for Autokitteh repository"
