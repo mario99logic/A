@@ -15,8 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Autokitteh Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
+          path: _autokitteh
           repository: autokitteh/autokitteh
           ref: ${{ github.event.client_payload.branch }}
           token: ${{ secrets.GITHUB_TOKEN }}
