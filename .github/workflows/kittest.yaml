@@ -14,7 +14,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Out Current Repository
+      - name: Check Out Kittest Repository
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.client_payload.branch || 'main' }}
