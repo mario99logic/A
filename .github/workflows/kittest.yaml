@@ -14,12 +14,18 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
+      - name: Check Out Current Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.branch || 'main' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Check Out Autokitteh Repository
         uses: actions/checkout@v4
         with:
           path: _autokitteh
           repository: autokitteh/autokitteh
-          ref: ${{ github.event.client_payload.branch }}
+          ref: ${{ github.event.client_payload.branch || 'main' }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set Up Go
