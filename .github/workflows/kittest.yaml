@@ -35,4 +35,3 @@ jobs:
         run: |
           echo "Running tests for Autokitteh repository"
           go test -v ./...
-          lsof -i :6060
