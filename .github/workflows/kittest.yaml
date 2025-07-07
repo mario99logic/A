@@ -1,4 +1,4 @@
-name: Run Tests on Dispatch
+name: AK Main Branch Merge Trigger
 
 on:
   repository_dispatch:
