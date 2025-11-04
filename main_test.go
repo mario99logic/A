@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-// Setup for all of the tests
+// Setup for all of the tests.
 func TestMain(m *testing.M) {
 	slog.Info("deploying new version of ak")
 	// Setup
